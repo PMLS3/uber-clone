@@ -8,7 +8,7 @@
           <ArrowLeftIcon :size="35" />
         </div>
 
-        <div class="h-16 mt-4 w-full">
+        <div class="w-full h-16 mt-4">
           <div :class="[isPickupActive ? 'circle-black' : 'circle-gray' ]" />
           <div class="line"></div>
           <div :class="[!isPickupActive ? 'square-black' : 'square-gray' ]" />
@@ -19,7 +19,7 @@
       <div class="col-span-10 pr-4">
         <div class="w-full h-5"></div>
 
-        <div class="mb-2 mt-5">
+        <div class="mt-5 mb-2">
           <AutoCompleteInput
             theId="firstInput"
             v-model:input="pickup"
@@ -115,8 +115,9 @@
         addressData.value = '' 
         return ''
       } 
-
+      console.log('ADDRESS', address)
       let res = await axios.get('address/' + address)
+      console.log('res', res)
       addressData.value = res.data
     } catch (err) {
       console.log(err)

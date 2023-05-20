@@ -12,16 +12,17 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.get('/api/address/:address', async (req, res) => {
+  console.log('HER', req.params)
     try {
       if (req.params.address === 'null') return res.status(200).json('');
-
+      console.log('procces', process.env.GOOGLE_MAPS_API_KEY)
         let data = await axios.get(
             'place/autocomplete/json' + 
             '?input=' + req.params.address + 
             '&types=address' + 
             '&key=' + process.env.GOOGLE_MAPS_API_KEY
         )
-
+          console.log('DATA', data)
         res.status(200).json(data.data.predictions);
       } catch (err) {
         console.log(err)

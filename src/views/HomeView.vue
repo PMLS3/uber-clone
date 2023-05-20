@@ -3,53 +3,47 @@
     <div class="m-3 mb-auto">
 
       <div class="my-20">
-        <img width="150" src="img/uber/uber2.svg">
+        <h1 class="text-6xl bikd">Load</h1>
+        <!-- <img width="150" src="img/uber/uber2.svg"> -->
       </div>
 
       <div class="grid grid-cols-2 gap-3 my-3">
         <ServiceSelectLarge
           @click="router.push('/directions')" 
-          text="Ride"
+          text="Bakkie"
           imageWidth="74"
-          image="ride"
+          image="bakkie"
         />
         <ServiceSelectLarge
-          text="Food"
+          text="Pickup Truck"
           imageWidth="72"
-          image="food"
+          image="pickup"
           :promo="true"
         />
       </div>
 
       <div class="grid grid-cols-4 gap-3 my-3">
         <ServiceSelectSmall
-          text="2 Wheels"
-          image="2wheels"
+          text="Cargo Vans"
+          image="cargo-vans"
         />
         <ServiceSelectSmall
-          text="Transit"
-          image="transit"
+          text="Box Trucks"
+          image="box-trucks"
         />
         <ServiceSelectSmall
-          text="Reserve"
-          image="reserve"
+          text="Flatbed"
+          image="flatbed"
         />
         <ServiceSelectSmall
-          text="Travel"
-          image="travel"
+          text="Refrigerated"
+          image="refrigerated"
         />
       </div>
 
       <div 
         @click="router.push('/directions')" 
-        class="
-          w-full 
-          bg-custom-color 
-          h-14 
-          rounded-full 
-          flex 
-          items-center p-3
-        "
+        class="flex items-center w-full p-3 rounded-full bg-custom-color h-14"
       >
         <MagnifyIcon :size="40" />
         <div class="ml-3 text-xs font-semibold text-gray-700">
@@ -59,26 +53,17 @@
 
     </div>
     <footer 
-      class="
-          w-full 
-          z-50 
-          flex 
-          justify-around 
-          p-1 
-          mb-2 
-          border-t-2 
-          border-t-gray-200
-        "
+      class="z-50 flex justify-around w-full p-1 mb-2 border-t-2 border-t-gray-200"
       >
       <div class="grid place-items-center">
         <HomeIcon :size="30" fillColor="#1f1e1e"/>
-        <div class="w-full -mt-1 text-xs text-center text-gray-800 font-semibold">
+        <div class="w-full -mt-1 text-xs font-semibold text-center text-gray-800">
           Home
         </div>
       </div>
       <div @click="router.push('/directions')" class="grid place-items-center">
         <MapMarkerIcon :size="30" fillColor="#b3b1b1"/>
-        <div class="w-full -mt-1 text-xs text-center text-gray-400 font-semibold">
+        <div class="w-full -mt-1 text-xs font-semibold text-center text-gray-400">
           Destination
         </div>
       </div>
